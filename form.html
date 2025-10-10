@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/form.css" />
+  <title>Fill The From page</title>
+</head>
+
+<body>
+  <main>
+    <section class="from-section">
+      <div class="left">
+        <h1>we are here just for you</h1>
+        <p class="discounted">join now with <span>30% off</span></p>
+        <div class="image">
+          <img src="images/logo-light.png" alt="The site Logo" />
+        </div>
+        <p class="copy-right"><span>&copy;</span>all copyrights reserved</p>
+      </div>
+      <div class="right">
+        <form action="index.html" method="post">
+          <label for="name"></label>
+          <input type="text" id="name" placeholder="write your name" />
+          <label for="mail"></label>
+          <input type="email" id="mail" placeholder="write your email" />
+          <label for="phone"></label>
+          <input type="tel" id="phone" name="phone" placeholder="+201234567890" pattern="^\+?\d{11}$"
+            title="The numbers should be 11 numbers" />
+          <label for="age"></label>
+          <input type="number" id="age" name="age" placeholder="Your age" min="10" max="90" />
+          <label for="question"></label>
+          <textarea name="question" id="question" placeholder="IF Your Want to Ask Anything, Do It!"></textarea>
+          <input type="submit" value="send" class="submit" />
+        </form>
+      </div>
+    </section>
+    /* Div that will be shown after hiding the first one */
+    <div class="show">
+      <div class="top">
+        <h1>we are here just for you</h1>
+        <p class="discounted">join now with <span>30% off</span></p>
+      </div>
+      <div class="bottom">
+        <div class="image">
+          <img src="images/logo-light.png" alt="The site Logo" />
+        </div>
+        <p class="copy-right"><span>&copy;</span>all copyrights reserved</p>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
