@@ -1,0 +1,380 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #fff;
+}
+
+.active {
+  background-color: rgba(39, 39, 250, 0.748);
+}
+
+:root {
+  --main-color: #bb2d3b;
+  --main-margin-top: 100px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.471);
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1100px) {
+  .container {
+    width: 1100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container {
+    width: 1500px;
+  }
+}
+
+/* start header and landing page */
+header {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    345deg,
+    var(--main-color),
+    rgba(0, 0, 0, 0.753)
+  );
+}
+
+header .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+header .content nav {
+  display: flex;
+  align-items: center;
+}
+
+header .content nav ul {
+  display: flex;
+}
+
+header .content nav ul li {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+header .content nav ul li a {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+header .content nav ul li:hover {
+  background-color: rgba(39, 39, 250, 0.748);
+  cursor: pointer;
+}
+
+header .content nav button {
+  margin-left: 100px;
+  color: #000;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  background-color: #ffffff39;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  transition: 0.5s;
+}
+
+header .content nav button:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+
+/*start content layout*/
+header .heading {
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+header .heading::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15%;
+  height: 2px;
+  border-radius: 15px;
+  background-image: linear-gradient(
+    to right,
+    var(--main-color),
+    rgba(0, 0, 0, 0.762)
+  );
+}
+
+header .heading h1 {
+  font-size: 60px;
+}
+
+header .heading p {
+  font-size: 20px;
+}
+
+header .describe {
+  font-size: 18px;
+  color: #fff;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+/*image layout*/
+
+.images {
+  position: relative;
+  margin: 50px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.images::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 50%;
+  background-color: var(--main-color);
+  z-index: -1;
+}
+
+header .images img {
+  width: 350px;
+  border-radius: 45px;
+  position: relative;
+}
+
+.box {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+header .images .box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, var(--main-color), #00000024);
+  border-radius: 45px;
+  opacity: 0.3;
+  z-index: 1;
+  transition: 0.3s;
+  border-radius: 45px;
+}
+
+header .images .box .text {
+  text-align: center;
+  line-height: 1.5;
+  width: 100%;
+  text-transform: capitalize;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #fff;
+  z-index: 2;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+header .images .box:hover::before {
+  opacity: 1;
+}
+
+header .images .box:hover .text {
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+header .images .box:hover .text a i {
+  animation-name: move-right;
+  animation-duration: 0.4s;
+  animation-iteration-count: infinite;
+}
+
+header .images .box:hover .text a span {
+  animation-name: change-color;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+header .images .box:hover .text a span:hover {
+  color: var(--main-color);
+}
+
+@keyframes move-right {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes change-color {
+  0%,
+  100% {
+    color: #fff;
+  }
+
+  50% {
+    color: #b6b6b6;
+  }
+}
+
+/* start footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(to top, black 90%, var(--main-color));
+  padding: 40px 10px;
+  color: #fff;
+  line-height: 2;
+}
+
+footer ul {
+  display: flex;
+}
+
+footer ul li {
+  padding-left: 10px;
+}
+/* start media */
+@media (max-width: 992px) {
+  header .content {
+    flex-direction: column;
+  }
+
+  header .content nav ul li {
+    margin-right: 0;
+  }
+
+  header .content nav button {
+    margin-left: 0;
+  }
+
+  header .text p {
+    width: 85%;
+  }
+
+  .about-ours .image img,
+  .great-results .image img {
+    display: none;
+  }
+
+  .about-ours .text,
+  .great-results .text {
+    text-align: center;
+  }
+
+  .about-ours .text ul li,
+  .great-results .text ul li {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 545px) {
+  header .content nav {
+    flex-direction: column;
+  }
+
+  header .text h1 {
+    font-size: 45px;
+  }
+
+  header .text p {
+    font-size: 20px;
+  }
+
+  header .content nav ul li a {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  header .logo img {
+    width: 155px;
+  }
+
+  header .content nav ul li {
+    padding: 5px;
+  }
+
+  header .text h1 {
+    font-size: 35px;
+  }
+
+  header .text p {
+    font-size: 10px;
+  }
+
+  header .more-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+/* end media for header and landing page */
+/* end media  */

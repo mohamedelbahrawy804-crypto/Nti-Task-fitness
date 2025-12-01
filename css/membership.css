@@ -1,0 +1,292 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #fff;
+}
+
+.active {
+  background-color: rgba(39, 39, 250, 0.748);
+}
+
+:root {
+  --main-color: #bb2d3b;
+  --main-margin-top: 100px;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1100px) {
+  .container {
+    width: 1100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container {
+    width: 1500px;
+  }
+}
+
+/* start header and landing page */
+header {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    345deg,
+    var(--main-color) 40%,
+    rgba(0, 0, 0, 0.753)
+  );
+}
+
+header .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+header .content nav {
+  display: flex;
+  align-items: center;
+}
+
+header .content nav ul {
+  display: flex;
+}
+
+header .content nav ul li {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+header .content nav ul li a {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+header .content nav ul li:hover {
+  background-color: rgba(39, 39, 250, 0.748);
+  cursor: pointer;
+}
+
+header .content nav button {
+  margin-left: 100px;
+  color: #000;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  background-color: #ffffff39;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  transition: 0.5s;
+}
+
+header .content nav button:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+/* start text or heading */
+header .heading {
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+  margin: 20px 0;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+header .heading::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15%;
+  height: 2px;
+  border-radius: 15px;
+  background-image: linear-gradient(
+    to right,
+    var(--main-color),
+    rgba(0, 0, 0, 0.762)
+  );
+}
+
+header .heading h1 {
+  font-size: 60px;
+}
+
+header .heading p {
+  font-size: 20px;
+}
+/*content page*/
+.content-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px 80px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+.content-page .box {
+  background-color: #fff;
+  text-align: center;
+  padding-bottom: 10px;
+  overflow: hidden;
+  border-radius: 15px;
+  text-transform: capitalize;
+  transition: 0.5s;
+}
+.content-page .box:hover {
+  box-shadow: 0 0 10px black;
+  transform: translateY(-5px);
+}
+.content-page .box img {
+  width: 100%;
+  max-height: 200px;
+}
+
+.content-page .box .text .location,
+.content-page .box .text .login-join {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.content-page .box .text .login-join {
+  justify-content: space-evenly;
+}
+
+.content-page .box .text .location a,
+.content-page .box .text .login-join a {
+  color: #000;
+}
+.content-page .box .text .login-join a {
+  padding: 5px 10px;
+  background-color: #bb2d3b36;
+  transition: 0.5s;
+  border-radius: 12px;
+}
+.content-page .box .text .login-join a:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+/* start footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(to top, black 90%, var(--main-color));
+  padding: 40px 10px;
+  color: #fff;
+  line-height: 2;
+}
+
+footer ul {
+  display: flex;
+}
+
+footer ul li {
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+footer ul li:first-child a:hover {
+  color: blue;
+}
+/* end footer */
+/* start media */
+/* start media */
+@media (max-width: 992px) {
+  header .content {
+    flex-direction: column;
+  }
+
+  header .content nav ul li {
+    margin-right: 0;
+  }
+
+  header .content nav button {
+    margin-left: 0;
+  }
+  header .heading h1 {
+    font-size: 35px;
+  }
+
+  .about-ours .image img,
+  .great-results .image img {
+    display: none;
+  }
+
+  .about-ours .text,
+  .great-results .text {
+    text-align: center;
+  }
+
+  .about-ours .text ul li,
+  .great-results .text ul li {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 545px) {
+  header .content nav {
+    flex-direction: column;
+  }
+
+  header .heading h1 {
+    font-size: 25px;
+  }
+
+  header .heading p {
+    margin-top: 5px;
+    font-size: 18px;
+  }
+
+  header .content nav ul li a {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  header .logo img {
+    width: 155px;
+  }
+
+  header .content nav ul li {
+    padding: 5px;
+  }
+
+  header .heading h1 {
+    font-size: 35px;
+  }
+
+  header .heading p {
+    font-size: 10px;
+  }
+}
+
+/* end media for header and landing page */
+/* end media  */
